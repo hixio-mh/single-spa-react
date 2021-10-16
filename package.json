@@ -9,7 +9,9 @@
     "watch-tests": "jest --watch --config jest.json",
     "format": "prettier --write './**/*'",
     "coverage": "jest --coverage --config jest.json",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "browserslist": [
     "IE 11",
@@ -63,5 +65,9 @@
   },
   "peerDependencies": {
     "react": "*"
+  },
+  "snyk": true,
+  "dependencies": {
+    "@snyk/protect": "latest"
   }
 }
